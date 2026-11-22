@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Tuli's Cake &amp; Pastry – ডুমুরিয়া, খুলনা</title>
+<meta name="description" content="Tuli's Cake & Pastry, ডুমুরিয়া, খুলনা। কেক দেখুন, WhatsApp-এ অর্ডার করুন।">
+<meta property="og:title" content="Tuli's Cake & Pastry">
+<meta property="og:description" content="কেক দেখুন, WhatsApp-এ অর্ডার করুন।">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/logo.webp">
+<link rel="icon" href="assets/logo.webp">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="hd">
+  <a class="brand" href="#home"><img id="logo" alt="" width="40" height="42" hidden><span id="bn"></span></a>
+  <button id="mb" aria-label="মেনু" aria-expanded="false">☰</button>
+  <nav id="nv">
+    <a href="#home">হোম</a><a href="#products">কেক</a><a href="#categories">ক্যাটাগরি</a><a href="#about">আমাদের কথা</a><a href="#contact">যোগাযোগ</a>
+    <a class="wa" id="hwa" target="_blank" rel="noopener">WhatsApp</a>
+  </nav>
+</header>
+<main>
+<section id="home" class="hero">
+  <div class="ht">
+    <h1 id="hl"></h1>
+    <p id="hd"></p>
+    <div class="cta"><a class="btn" href="#products">কেক দেখুন</a><a class="btn alt" id="hwa2" target="_blank" rel="noopener">WhatsApp-এ মেসেজ</a></div>
+  </div>
+  <img id="himg" alt="" width="400" height="500" hidden>
+</section>
+
+<section id="products" class="sec">
+  <h2>আমাদের কেক</h2>
+  <div class="tools">
+    <input id="q" type="search" placeholder="কেকের নাম খুঁজুন" aria-label="খুঁজুন">
+    <select id="so" aria-label="সাজান">
+      <option value="av">Available আগে</option><option value="df">ডিফল্ট</option>
+      <option value="lo">দাম: কম থেকে বেশি</option><option value="hi">দাম: বেশি থেকে কম</option>
+    </select>
+  </div>
+  <div id="categories" class="chips" role="group" aria-label="ক্যাটাগরি"></div>
+  <p id="st" role="status"></p>
+  <div id="grid" class="grid"></div>
+</section>
+
+<section id="reviews" class="sec alt">
+  <h2>গ্রাহকদের রিভিউ</h2>
+  <div id="rv" class="rv"></div>
+</section>
+
+<section id="about" class="sec"><h2>আমাদের কথা</h2><p id="ab" class="ab"></p></section>
+
+<section id="contact" class="sec alt"><h2>যোগাযোগ</h2><ul id="ct" class="ct"></ul></section>
+</main>
+<footer class="ft">© <span id="yr"></span> <span id="fn"></span></footer>
+
+<div id="lb" hidden role="dialog" aria-modal="true">
+  <button id="lx" aria-label="বন্ধ">✕</button>
+  <button id="lp" aria-label="আগের">‹</button>
+  <figure><div id="lm"></div><figcaption><span id="lc"></span> <a id="lo" class="btn" target="_blank" rel="noopener" hidden>WhatsApp-এ অর্ডার</a></figcaption></figure>
+  <button id="ln" aria-label="পরের">›</button>
+</div>
+<button id="top" aria-label="উপরে যান" hidden>↑</button>
+<script src="config.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
