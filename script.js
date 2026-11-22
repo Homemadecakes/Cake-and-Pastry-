@@ -55,13 +55,14 @@ if (!rl.length) $('#reviews').remove();
 // ---- ডেটা লোড ----
 const jsonp = u => new Promise((ok, no) => {
   const n = 'cb' + Date.now(), s = document.createElement('script');
-  window[n] = d => { ok(d); s.remove(); delete window[n]; };
-  s.onerror = () => { no(new Error('jsonp')); s.remove(); };
+  const t = setTimeout(() => { no(new Error('সময় শেষ: Apps Script লিংক ও "Anyone" অ্যাক্সেস দেখুন')); s.remove(); }, 12000);
+  window[n] = d => { clearTimeout(t); ok(d); s.remove(); delete window[n]; };
+  s.onerror = () => { clearTimeout(t); no(new Error('jsonp')); s.remove(); };
   s.src = u + (u.includes('?') ? '&' : '?') + 'callback=' + n; document.head.append(s);
 });
 const fetchData = async () => {
   if (!C.apiUrl) throw new Error('apiUrl সেট করা নেই');
-  try { const r = await fetch(C.apiUrl + (C.apiUrl.includes('?') ? '&' : '?') + 't=' + Date.now()); if (!r.ok) throw 0; return await r.json(); }
+  try { const r = await fetch(C.apiUrl + (C.apiUrl.includes('?') ? '&' : '?') + 't=' + Date.now(), { signal: AbortSignal.timeout ? AbortSignal.timeout(8000) : undefined }); if (!r.ok) throw 0; return await r.json(); }
   catch (e) { return jsonp(C.apiUrl); }
 };
 const norm = raw => {
