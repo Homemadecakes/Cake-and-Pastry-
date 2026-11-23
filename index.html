@@ -1,69 +1,116 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="bn">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Tuli's Cake &amp; Pastry – ডুমুরিয়া, খুলনা</title>
-<meta name="description" content="Tuli's Cake & Pastry, ডুমুরিয়া, খুলনা। কেক দেখুন, WhatsApp-এ অর্ডার করুন।">
-<meta property="og:title" content="Tuli's Cake & Pastry">
-<meta property="og:description" content="কেক দেখুন, WhatsApp-এ অর্ডার করুন।">
+<title>Tuli's Cake & Pastry | Home Bakery in Dumuria, Khulna</title>
+<meta name="description" content="Tuli's Cake & Pastry: homemade birthday, theme, customized and anniversary cakes in Dumuria, Khulna. Choose your cake and order on WhatsApp.">
 <meta property="og:type" content="website">
-<meta property="og:image" content="assets/logo.webp">
-<link rel="icon" href="assets/logo.webp">
-<link rel="stylesheet" href="style.css">
+<meta property="og:title" content="Tuli's Cake & Pastry">
+<meta property="og:description" content="Sweet Moments, Beautiful Memories. Homemade cakes in Dumuria, Khulna.">
+<meta property="og:image" content="assets/hero/hero-1.jpg">
+<meta name="theme-color" content="#12294A">
+<link rel="icon" href="assets/logo/logo-mark.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Hind+Siliguri:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Bakery","name":"Tuli's Cake & Pastry","slogan":"Sweet Moments, Beautiful Memories.","description":"Home bakery making birthday, theme, customized and anniversary cakes.","telephone":"+8801982561926","image":"assets/hero/hero-1.jpg","address":{"@type":"PostalAddress","addressLocality":"Dumuria","addressRegion":"Khulna","addressCountry":"BD"},"sameAs":["https://www.facebook.com/share/1FAnDNrKje/"]}</script>
 </head>
 <body>
-<header class="hd">
-  <a class="brand" href="#home"><img id="logo" alt="" width="40" height="42" hidden><span id="bn"></span></a>
-  <button id="mb" aria-label="মেনু" aria-expanded="false">☰</button>
-  <nav id="nv">
-    <a href="#home">হোম</a><a href="#products">কেক</a><a href="#categories">ক্যাটাগরি</a><a href="#about">আমাদের কথা</a><a href="#contact">যোগাযোগ</a>
-    <a class="wa" id="hwa" target="_blank" rel="noopener">WhatsApp</a>
-  </nav>
+<header class="top">
+  <a href="#top" class="brand"><img src="assets/logo/logo.svg" alt="Tuli's Cake & Pastry" width="173" height="50"></a>
+  <nav aria-label="Main"><a href="#cakes">Cakes</a><a href="#custom">Custom cake</a><a href="#about">About</a><a href="#contact">Contact</a></nav>
+  <button id="cartBtn" class="cartbtn" type="button">Cart <b id="cartCount">0</b></button>
 </header>
-<main>
-<section id="home" class="hero">
-  <div class="ht">
-    <h1 id="hl"></h1>
-    <p id="hd"></p>
-    <div class="cta"><a class="btn" href="#products">কেক দেখুন</a><a class="btn alt" id="hwa2" target="_blank" rel="noopener">WhatsApp-এ মেসেজ</a></div>
-  </div>
-  <img id="himg" alt="" width="400" height="500" hidden>
-</section>
 
-<section id="products" class="sec">
-  <h2>আমাদের কেক</h2>
-  <div class="tools">
-    <input id="q" type="search" placeholder="কেকের নাম খুঁজুন" aria-label="খুঁজুন">
-    <select id="so" aria-label="সাজান">
-      <option value="av">Available আগে</option><option value="df">ডিফল্ট</option>
-      <option value="lo">দাম: কম থেকে বেশি</option><option value="hi">দাম: বেশি থেকে কম</option>
-    </select>
-  </div>
-  <div id="categories" class="chips" role="group" aria-label="ক্যাটাগরি"></div>
-  <p id="st" role="status"></p>
-  <div id="grid" class="grid"></div>
-</section>
+<main id="top">
+  <section class="hero">
+    <div>
+      <h1>Sweet Moments, Beautiful Memories.</h1>
+      <p>ডুমুরিয়ার ঘরোয়া বেকারি। জন্মদিন, অ্যানিভার্সারি বা আপনার নিজের ডিজাইনের কেক পছন্দ করুন, তারপর WhatsApp-এ অর্ডার করুন।</p>
+      <a class="btn" href="#cakes">See our cakes</a>
+    </div>
+    <div class="hero-img" id="heroImg">
+      <img src="assets/hero/hero-1.jpg" alt="Pink birthday cake with a cartoon girl and flowers, next to the Tuli's Cake & Pastry sign" class="on" width="750" height="975">
+      <img src="assets/hero/hero-2.jpg" alt="Anniversary cake with red hearts and a calendar" width="750" height="975">
+      <img src="assets/hero/hero-3.jpg" alt="White cake with a large sugar flower and gold candles" width="750" height="975">
+      <img src="assets/hero/hero-4.jpg" alt="Stacked pastel cakes with a princess topper" width="750" height="975">
+    </div>
+  </section>
 
-<section id="reviews" class="sec alt">
-  <h2>গ্রাহকদের রিভিউ</h2>
-  <div id="rv" class="rv"></div>
-</section>
+  <section class="sec" id="offers" hidden>
+    <h2>Best sellers &amp; offers</h2>
+    <div class="grid" id="offerGrid"></div>
+  </section>
 
-<section id="about" class="sec"><h2>আমাদের কথা</h2><p id="ab" class="ab"></p></section>
+  <section class="sec" id="cakes">
+    <h2>Our cakes</h2>
+    <div class="tools">
+      <input id="search" type="search" placeholder="Search cakes, e.g. heart, butterfly" aria-label="Search cakes">
+      <div id="chips" class="chips"></div>
+    </div>
+    <div class="grid" id="grid"></div>
+    <p id="empty" class="note" hidden>No cakes match your search. Try another word or choose All cakes.</p>
+    <p class="note">ডিজাইন ও সাইজ অনুযায়ী দাম বদলাতে পারে। চূড়ান্ত দাম WhatsApp-এ নিশ্চিত করা হবে।</p>
+  </section>
 
-<section id="contact" class="sec alt"><h2>যোগাযোগ</h2><ul id="ct" class="ct"></ul></section>
+  <section class="sec" id="custom">
+    <h2>Customized cake request</h2>
+    <p>নিজের পছন্দের ডিজাইনের কেক চান? তথ্য দিন, আমরা WhatsApp-এ আপনার সাথে কথা বলব। রেফারেন্স ছবি থাকলে WhatsApp-এ পাঠিয়ে দিন।</p>
+    <form id="customForm" class="form">
+      <label>Your name<input name="name" required autocomplete="name"></label>
+      <label>Occasion
+        <select name="occasion"><option>Birthday</option><option>Anniversary</option><option>Wedding</option><option>Other</option></select>
+      </label>
+      <label>Cake weight (lb)<input name="weight" type="number" min="1" step="0.5" value="1" required></label>
+      <label>Date needed<input name="date" type="date" required></label>
+      <label>Design idea<textarea name="design" rows="3" required placeholder="Colour, theme, flowers, characters..."></textarea></label>
+      <label>Text on the cake<input name="text" placeholder="e.g. Happy Birthday Sara"></label>
+      <button class="btn" type="submit">Send request on WhatsApp</button>
+    </form>
+  </section>
+
+  <section class="sec" id="about">
+    <h2>About us</h2>
+    <p class="wide">Tuli's Cake &amp; Pastry ডুমুরিয়া, খুলনার একটি হোম বেকারি। এখানে ঘরে তৈরি কেক পাওয়া যায়। ডিজাইন, সাইজ আর দাম নিয়ে সরাসরি WhatsApp-এ কথা বলুন।</p>
+  </section>
+
+  <section class="sec" id="contact">
+    <h2>Contact</h2>
+    <dl class="info">
+      <dt>WhatsApp / Phone</dt><dd><a href="tel:+8801982561926">01982561926</a></dd>
+      <dt>Facebook</dt><dd><a href="https://www.facebook.com/share/1FAnDNrKje/" target="_blank" rel="noopener">Tuli's Cake &amp; Pastry on Facebook</a></dd>
+      <dt>Address</dt><dd>ডুমুরিয়া, খুলনা</dd>
+      <dt>Delivery</dt><dd>শুধুমাত্র ডুমুরিয়ায়</dd>
+      <dt>Payment</dt><dd>bKash, Nagad, Cash on Delivery</dd>
+    </dl>
+  </section>
 </main>
-<footer class="ft">© <span id="yr"></span> <span id="fn"></span></footer>
 
-<div id="lb" hidden role="dialog" aria-modal="true">
-  <button id="lx" aria-label="বন্ধ">✕</button>
-  <button id="lp" aria-label="আগের">‹</button>
-  <figure><div id="lm"></div><figcaption><span id="lc"></span> <a id="lo" class="btn" target="_blank" rel="noopener" hidden>WhatsApp-এ অর্ডার</a></figcaption></figure>
-  <button id="ln" aria-label="পরের">›</button>
-</div>
-<button id="top" aria-label="উপরে যান" hidden>↑</button>
-<script src="config.js"></script>
-<script src="script.js"></script>
+<footer class="foot">© <span id="year"></span> Tuli's Cake &amp; Pastry, Dumuria, Khulna</footer>
+
+<div id="backdrop" class="backdrop"></div>
+<aside id="cart" class="drawer" aria-label="Your cart" aria-hidden="true">
+  <div class="dh"><h2>Your cart</h2><button id="cartClose" class="x" type="button" aria-label="Close cart">✕</button></div>
+  <ul id="cartList" class="clist"></ul>
+  <form id="cartForm" class="form">
+    <p class="tot">Estimated total <b id="cartTotal">৳0</b></p>
+    <label>Your name<input id="cName" required autocomplete="name"></label>
+    <label>Delivery address (Dumuria only)<input id="cAddr" required autocomplete="street-address"></label>
+    <label>Date needed<input id="cDate" type="date"></label>
+    <label>Note<input id="cNote" placeholder="Text on cake, time, etc."></label>
+    <p class="note">Payment: bKash, Nagad or Cash on Delivery.</p>
+    <button id="sendOrder" class="btn" type="submit">Send order on WhatsApp</button>
+  </form>
+</aside>
+
+<a id="waFloat" class="wa" href="#" target="_blank" rel="noopener">WhatsApp</a>
+
+<script src="js/config.js"></script>
+<script src="js/products.js"></script>
+<script src="js/filters.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/app.js"></script>
 </body>
 </html>

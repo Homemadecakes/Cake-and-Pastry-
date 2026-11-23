@@ -1,27 +1,25 @@
-# Tuli's Cake & Pastry: সেটআপ গাইড
+# Tuli's Cake & Pastry — ওয়েবসাইট
 
-## ১. Google Sheet
-1. Google Drive-এ `Google_Sheet_Template.xlsx` আপলোড করে **Google Sheets দিয়ে খুলুন** (বা Sheets-এ File → Import)।
-2. `Products` ট্যাবে `name`, `category`, `price` কলাম পূরণ করুন। `id` বদলাবেন না।
-3. `availability`: `Available` বা `Not Available`। `status`: `TRUE` = দেখাবে, `FALSE` = লুকাবে।
-4. `price` ফাঁকা থাকলে সাইটে "দাম জানতে মেসেজ করুন" দেখাবে।
-5. ১৭টি ডুপ্লিকেট ছবি ও ১টি লোগো-ছবির `status` FALSE করা আছে।
+## GitHub Pages-এ চালু করার নিয়ম
+1. GitHub repo খুলুন (Homemadecakes/Cake-and-Pastry-)। **Add file → Upload files** চাপুন।
+2. এই ফোল্ডারের ভেতরের সব কিছু (index.html, css, js, assets, README.md) টেনে এনে ছাড়ুন। `index.html` যেন repo-র একদম ওপরে থাকে।
+3. **Commit changes** চাপুন।
+4. **Settings → Pages → Branch: main, Folder: / (root) → Save**।
+5. ১–২ মিনিট পর Pages-এর লিংকে সাইট খুলবে।
 
-## ২. Apps Script (ডেটা API)
-1. Sheet-এ **Extensions → Apps Script** খুলুন, `Code.gs`-এর পুরো কোড পেস্ট করে সেভ করুন।
-2. **Deploy → New deployment → Web app**: Execute as = **Me**, Who has access = **Anyone** → Deploy।
-3. যে **Web app URL** পাবেন, সেটি `config.js`-এর `apiUrl`-এ বসান।
-4. Script আলাদা প্রজেক্ট হলে `Code.gs`-এর `SPREADSHEET_ID`-তে Sheet-এর ID দিন।
-5. Code.gs বদলালে **Manage deployments → Edit → New version** দিয়ে আবার Deploy করুন (URL একই থাকে)।
+## কোন ফাইলে কী বদলাবেন
+- `js/products.js`: কেকের নাম, ক্যাটাগরি, দাম, availability, badge। দামগুলো এখন আনুমানিক (৩০০/৩৫০ প্রতি পাউন্ড), আপনার দাম দিয়ে বদলে নিন।
+- `js/config.js`: WhatsApp নম্বর, Facebook লিংক, ক্যাটাগরির তালিকা।
+- `assets/cakes/`: কেকের ছবি (নাম TC-02.jpg, TC-03.jpg ইত্যাদি, প্রোডাক্ট ID-র সাথে মেলানো)।
+- Badge লিখলে (যেমন "Best Seller", "Offer") কেকটি "Best sellers & offers" অংশে আলাদা করে দেখাবে। কোনো কেকে badge না থাকলে ওই অংশ লুকানো থাকে।
+- Wedding, Chocolate আর Cupcakes ক্যাটাগরিতে কেক যোগ করলেই ফিল্টারে বাটন দেখা যাবে। কেক না থাকলে বাটন দেখায় না।
 
-## ৩. `config.js` পূরণ
-`whatsapp` (যেমন `8801XXXXXXXXX`), `phone`, `facebook`, `address` লিখুন। ফাঁকা থাকলে ওই অংশ সাইটে দেখাবে না। WhatsApp নম্বর না দেওয়া পর্যন্ত অর্ডার বাটন নম্বর ছাড়া খুলবে।
+## Google Sheets (পরের ধাপ)
+- Sheet-এর কলাম: `id, name, category, price, availability, status, badge, image`। `image` ফাঁকা রাখলে `assets/cakes/<id>.jpg` ধরা হবে।
+- `availability`: Available হলে দাম ও Add to cart দেখায়, Not Available হলে শুধু "Not Available" লেখা।
+- `status`: TRUE হলে কেক দেখায়, FALSE হলে লুকায়।
+- Apps Script API পরীক্ষা হয়ে গেলে `js/config.js`-এ `sheets.enabled` কে `true` করুন। Sheet না পেলে সাইট নিজে থেকেই `products.js`-এর ডেটা দেখাবে।
 
-## ৪. GitHub Pages
-1. GitHub-এ repository `tulis-cake-pastry` খুলুন (Public)।
-2. এই ফোল্ডারের **ভেতরের সব ফাইল** (`index.html`, `assets/` ইত্যাদি) আপলোড করুন।
-3. **Settings → Pages → Source: Deploy from a branch → main / (root)** → Save।
-4. কয়েক মিনিট পর সাইট চালু হবে: `https://tiredmanmehhh-jpg.github.io/tulis-cake-pastry/`
-
-## নতুন কেক যোগ
-ছবি `assets/images/` ফোল্ডারে দিন (ফাইলনাম = Sheet-এর `id` + `.webp`/`.jpg`/`.png`), তারপর Sheet-এ নতুন সারি যোগ করুন। অন্য নামে ছবি রাখলে `image` কলামে ফাইলনাম লিখুন।
+## ছবি
+- ৪৩টা কেকের ছবি আছে। Bouquet-এর ছবিগুলো বাদ দেওয়া হয়েছে।
+- হিরো ছবি ৪টা: `assets/hero/hero-1.jpg` থেকে `hero-4.jpg`।
